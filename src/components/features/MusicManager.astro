@@ -151,6 +151,18 @@ const managerConfigStr = JSON.stringify({
                 var data = await res.json();
 
                 if (Array.isArray(data) && data.length > 0) {
+                    // 剔除 1 分钟以下的歌曲
+                    try {
+                        var filterRes = await fetch('/playlist-filter.json');
+                        if (filterRes.ok) {
+                            var filterData = await filterRes.json();
+                            var keepIds = filterData.ids || [];
+                            data = data.filter(function (item) {
+                                var m = (item.url || '').match(/id=(\d+)/);
+                                return !m || keepIds.indexOf(m[1]) !== -1;
+                            });
+                        }
+                    } catch (e) { /* 过滤失败则全部保留 */ }
                     state.playlist = data.map(function (item) {
                         return {
                             name: item.title || item.name || 'Unknown',
