@@ -20,7 +20,12 @@ import "@/styles/markdown.css";
 import "@/styles/expressive-code.css";
 import "@/styles/toc.css";
 import "@/styles/collections.css";
+import { backgroundConfig } from "@/config";
 import "@/styles/custom-bg.css";
+// 背景配置(参考 fqzlr 写法)
+const bgDesktop = Array.isArray(backgroundConfig.desktop) ? backgroundConfig.desktop[0] : backgroundConfig.desktop;
+const bgMobile = Array.isArray(backgroundConfig.mobile) ? backgroundConfig.mobile[0] : backgroundConfig.mobile;
+
 
 interface Props {
 	title?: string;
@@ -127,5 +132,9 @@ const navLinks = navBarConfig.links.map((item) => {
 		}
 	});
 </script>
+
+	{backgroundConfig.enabled && (
+		<div class="site-bg" style={`--bg-desktop: url("${bgDesktop}"); --bg-mobile: url("${bgMobile}");`} aria-hidden="true"></div>
+	)}
 </Layout>
 

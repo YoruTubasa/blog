@@ -55,3 +55,17 @@ home-ticker .home-ticker__track {
 	text-align: center;
 	letter-spacing: 0.02em;
 }
+
+.site-bg {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	background-image: var(--bg-desktop);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	pointer-events: none;
+}
+@media (max-width: 768px) {
+	.site-bg { background-image: var(--bg-mobile); }
+}
