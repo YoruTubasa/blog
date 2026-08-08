@@ -75,3 +75,5 @@ export { plantumlConfig } from "./plantumlConfig"; // PlantUML 图表配置
 export { sidebarLayoutConfig } from "./sidebarConfig"; // 侧边栏布局配置
 export { siteConfig } from "./siteConfig"; // 站点基础配置
 export { sponsorConfig } from "./sponsorConfig"; // 赞助配置
+export { backgroundConfig } from "./backgroundConfig";
+export { analyticsConfig } from "./analyticsConfig";
