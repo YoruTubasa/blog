@@ -9,31 +9,6 @@ body {
 	background-color: transparent !important;
 }
 
-/* ===== 毛玻璃文字卡片(跟随主题) ===== */
-.card-base,
-.card-base-transparent {
-	background-color: rgba(13, 13, 15, 0.55) !important;
-	backdrop-filter: blur(18px) saturate(140%) !important;
-	-webkit-backdrop-filter: blur(18px) saturate(140%) !important;
-	border: 1px solid rgba(255, 255, 255, 0.07) !important;
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
-}
-:root:not(.dark) .card-base,
-:root:not(.dark) .card-base-transparent {
-	background-color: rgba(255, 255, 255, 0.62) !important;
-	border-color: rgba(0, 0, 0, 0.06) !important;
-}
-@media (max-width: 768px) {
-	.card-base,
-	.card-base-transparent {
-		background-color: rgba(13, 13, 15, 0.72) !important;
-	}
-	:root:not(.dark) .card-base,
-	:root:not(.dark) .card-base-transparent {
-		background-color: rgba(255, 255, 255, 0.78) !important;
-	}
-}
-
 /* ===== 公告栏横向滚动 ===== */
 home-ticker .home-ticker__track {
 	display: flex;
@@ -45,7 +20,7 @@ home-ticker .home-ticker__track {
 	to { transform: translateX(-50%); }
 }
 
-/* 一言 */
+/* ===== 一言 ===== */
 .home-hero__yiyan {
 	margin-top: 0.6rem;
 	min-height: 1.6em;
@@ -56,6 +31,7 @@ home-ticker .home-ticker__track {
 	letter-spacing: 0.02em;
 }
 
+/* ===== 背景层(backgroundConfig.enabled 时启用) ===== */
 .site-bg {
 	position: fixed;
 	inset: 0;
@@ -67,5 +43,7 @@ home-ticker .home-ticker__track {
 	pointer-events: none;
 }
 @media (max-width: 768px) {
-	.site-bg { background-image: var(--bg-mobile); }
+	.site-bg {
+		background-image: var(--bg-mobile);
+	}
 }
