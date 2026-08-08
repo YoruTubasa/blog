@@ -174,7 +174,8 @@ const rainConfig = {
 								<span class="sr-only"> 的技术博客</span>
 							</h1>
 						)}
-						<div class="home-hero__name-badge">{homeConfig.nameBadge || ""}</div>
+						<div class="home-hero__yiyan" id="home-yiyan" aria-live="polite"></div>
+					<div class="home-hero__name-badge">{homeConfig.nameBadge || ""}</div>
 					</div>
 				</div>
 			</div>
@@ -1232,4 +1233,37 @@ function collectRainEdges(hero: HTMLElement) {
 			cleanup();
 		}
 	});
+
+	// ===== 一言 API + 打字机(10秒换一句) =====
+	const yiyanEl = document.getElementById("home-yiyan");
+	if (yiyanEl) {
+		let yiyanTimer = null;
+		async function loadYiyan() {
+			if (!yiyanEl) return;
+			try {
+				const res = await fetch("https://v1.hitokoto.cn/?encode=json&lang=cn", { headers: { "Accept": "application/json" } });
+				const data = await res.json();
+				const text = data.hitokoto + (data.from_who ? " ——" + data.from_who : "");
+				typeYiyan(text);
+			} catch (err) {
+				typeYiyan("今天也要加油哦！");
+			}
+		}
+		function typeYiyan(text) {
+			let i = 0;
+			yiyanEl.textContent = "";
+			const speed = 70;
+			function type() {
+				if (i <= text.length) {
+					yiyanEl.textContent = text.slice(0, i);
+					i += 1;
+					setTimeout(type, speed);
+				}
+			}
+			type();
+		}
+		loadYiyan();
+		yiyanTimer = setInterval(loadYiyan, 10000);
+	}
+
 </script>

@@ -44,3 +44,14 @@ home-ticker .home-ticker__track {
 	from { transform: translateX(0); }
 	to { transform: translateX(-50%); }
 }
+
+/* 一言 */
+.home-hero__yiyan {
+	margin-top: 0.6rem;
+	min-height: 1.6em;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.75);
+	text-align: center;
+	letter-spacing: 0.02em;
+}
