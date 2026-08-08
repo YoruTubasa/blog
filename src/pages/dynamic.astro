@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from "astro:content";
+import PageTitle from "@/components/common/PageTitle.astro";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+
+const dynamics = (await getCollection("dynamic")).sort(
+	(a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
+);
+const rendered = await Promise.all(
+	dynamics.map(async (d) => ({
+		...d,
+		Content: (await render(d)).Content,
+	})),
+);
+const title = "动态";
+const description = "我的最新动态与分享";
+---
+
+<MainGridLayout title={title} description={description} hasOwnH1={true}>
+	<div class="card-base px-9 py-6 relative z-10">
+		<PageTitle title={title} description={description} />
+
+		{rendered.length === 0 ? (
+			<p class="mt-8 text-center text-neutral-500">还没有动态，敬请期待～</p>
+		) : (
+			<div class="mt-8 space-y-8">
+				{rendered.map((d) => (
+					<div class="border-l-2 border-(--primary) pl-5">
+						<time class="text-xs text-neutral-500">
+							{d.data.published.toLocaleDateString("zh-CN", {
+								year: "numeric",
+								month: "long",
+								day: "numeric",
+								hour: "2-digit",
+								minute: "2-digit",
+							})}
+						</time>
+						<div class="mt-2 prose prose-sm max-w-none dark:prose-invert">
+							<d.Content />
+						</div>
+					</div>
+				))}
+			</div>
+		)}
+	</div>
+</MainGridLayout>
