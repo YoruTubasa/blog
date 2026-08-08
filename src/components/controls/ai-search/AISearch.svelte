@@ -302,10 +302,10 @@ onMount(() => {
 				<div class="ai-header__left">
 					<img
 						src="/assets/images/aut.webp"
-						alt="喵墩"
+						alt="夜翼玖"
 						class="ai-header__avatar"
 					/>
-					<span class="ai-header__name">喵墩</span>
+					<span class="ai-header__name">夜翼玖</span>
 					<span class="ai-header__model">{aiSearchPublicConfig.modelName}</span>
 				</div>
 				<div class="ai-header__actions">
@@ -368,7 +368,7 @@ onMount(() => {
 						<div class="ai-empty__icon-wrapper">
 							<img
 								src="/assets/images/aut.webp"
-								alt="喵墩"
+								alt="夜翼玖"
 								class="ai-empty__avatar"
 							/>
 						</div>
@@ -390,7 +390,7 @@ onMount(() => {
 					>
 						{#if msg.role === "assistant"}
 							<div class="ai-msg__avatar">
-								<img src="/assets/images/aut.webp" alt="喵墩" class="ai-msg__avatar-img" />
+								<img src="/assets/images/aut.webp" alt="夜翼玖" class="ai-msg__avatar-img" />
 							</div>
 						{/if}
 						<div class="ai-msg__body">

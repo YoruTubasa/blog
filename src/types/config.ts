@@ -300,7 +300,7 @@ export type HeroDialogueConfig = {
 	enabled?: boolean;
 	/** 说话者名称 */
 	speakers?: {
-		host?: string; // 站长名，如「哈基墩」
+		host?: string; // 站长名
 		visitor?: string; // 访客名，如「访客」
 	};
 	/** 默认展示的简介台词，逐句播放；末句后可打开话题菜单 */
