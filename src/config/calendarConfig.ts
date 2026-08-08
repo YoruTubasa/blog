@@ -65,12 +65,12 @@ export const calendarConfig: CalendarConfig = {
 	birthdays: [
 		{
 			name: "我的生日",
-			date: { type: "solar", month: 7, day: 10 },
+			date: { type: "lunar", month: 10, day: 6 },
 			icon: "material-symbols:cake",
-			note: "又长大一岁",
+			note: "农历十月初六",
 		},
 		{
-			name: "建站日",
+			name: "建站纪念日",
 			date: { type: "solar", month: 8, day: 8 },
 			icon: "material-symbols:rocket-launch",
 			note: "夜翼玖的博客上线纪念日",

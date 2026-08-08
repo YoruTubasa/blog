@@ -13,14 +13,6 @@ export const galleryConfig: GalleryConfig = {
 		// date: 相册日期，格式为 YYYY-MM-DD，用于排序和显示
 		// tags: 相册标签，用于分类和过滤
 		// 每添加一个数组项就相当于添加了一个相册，记得在 public/gallery/ 目录下创建对应的子目录并放入图片
-		{
-			id: "gpt-img2-2026",
-			name: "GPT生图",
-			description: "Image 2 生成的图片",
-			location: "gpt",
-			date: "2026-05-24",
-			tags: ["AI", "GPT生图"],
-		},
 	],
 
 	// 瀑布流最小列宽(px)，浏览器根据容器宽度自动计算列数，默认 240
