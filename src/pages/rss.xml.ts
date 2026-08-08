@@ -194,7 +194,7 @@ export async function GET(context: APIContext): Promise<Response> {
 		site,
 		customData: `<templateTheme>Firefly</templateTheme>
 		<templateThemeVersion>${pkg.version}</templateThemeVersion>
-		<templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl>
+		<templateThemeUrl>https://github.com/YoruTubasa/blog</templateThemeUrl>
 		<lastBuildDate>${formatDateI18nWithTime(new Date())}</lastBuildDate>`,
 		items: feedItems,
 	});
