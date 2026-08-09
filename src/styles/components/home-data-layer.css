@@ -254,7 +254,7 @@
 
 .guide-card--article h3 {
 	margin: 0;
-	font-size: clamp(1.65rem, 2.7vw, 2.55rem);
+	font-size: clamp(1.25rem, 2vw, 2rem);
 }
 
 .guide-card__article-heading {
