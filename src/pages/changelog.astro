@@ -1,0 +1,64 @@
+---
+import PageTitle from "@/components/common/PageTitle.astro";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+
+const changelog = [
+	{
+		version: "v1.1.0",
+		date: "2026-08-09",
+		title: "全面改造:评论/音乐/视觉/性能升级",
+		items: [
+			"评论系统切换为 Waline(SQLite 自托管,HTTPS 反代)",
+			"管理员专属标签「夜翼玖专属」",
+			"首页一言 API(5 秒轮换 + 打字机效果)",
+			"QQ 头像本地化,不再依赖外链",
+			"音乐播放器:更换歌单、随机播放、剔除 1 分钟以下歌曲",
+			"音乐页升级为 3D 可视化 + 评论区",
+			"友链页改为经典网格卡片样式",
+			"公告栏横向滚动,公告更新",
+			"背景色跟随主题(暗/亮),移除毛玻璃",
+			"日历:生日改农历十月初六、建站纪念日",
+			"关于页优化文本并补全超链接",
+			"安全优化:gzip 压缩、30 天缓存、安全响应头、端口内网化",
+			"性能优化:资源精简、首页加载 0.35s",
+			"GitHub 仓库 YoruTubasa/blog 每 5 分钟自动同步",
+		],
+	},
+	{
+		version: "v1.0",
+		date: "2026-08-09",
+		title: "博客全新上线",
+		items: [
+			"基于 Firefly-Mod 主题深度魔改,黑白极简风格",
+			"对话式互动首页 + 动态时间线 + 更新日志",
+			"日历 / 相册 / 收藏 / 标签图谱 / 知识库",
+			"随机壁纸背景 + 挽留/欢迎交互",
+			"Twikoo 评论(后迁移至 Waline)",
+		],
+	},
+];
+
+const title = "更新日志";
+const description = "博客的每一次成长都记录在这里";
+---
+
+<MainGridLayout title={title} description={description} hasOwnH1={true}>
+	<div class="card-base px-9 py-6 relative z-10">
+		<PageTitle title={title} description={description} />
+
+		<div class="mt-8 space-y-8">
+			{changelog.map((log) => (
+				<div class="border-l-2 border-(--primary) pl-5">
+					<div class="flex items-center gap-3">
+						<span class="font-bold text-lg">{log.version}</span>
+						<span class="text-sm text-neutral-500">{log.date}</span>
+					</div>
+					<p class="mt-1 text-neutral-600 dark:text-neutral-300">{log.title}</p>
+					<ul class="mt-3 list-disc list-inside text-sm space-y-1">
+						{log.items.map((item) => <li>{item}</li>)}
+					</ul>
+				</div>
+			))}
+		</div>
+	</div>
+</MainGridLayout>
