@@ -23,7 +23,7 @@
 
 - ⭐ **GitHub**：[YoruTubasa](https://github.com/YoruTubasa)
 - 📧 **Email**：[yorutubasa@gmail.com](mailto:yorutubasa@gmail.com)
-- 🐧 **QQ群**：[YORUTUBASA](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4QFJTrPMhbo1QEdGzYO95jPbdWfY4l_a&authKey=%2FHgwd9lDqiYz0s6QlKdAnDCdYVuEOW5FZPa1%2FqgcoaVwL3vxeT5P7Ysj%2FBE9GTs0&noverify=0&group_code=1046678455)
+- 🐧 **QQ群**：[YORUTUBASA（1046678455）](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4QFJTrPMhbo1QEdGzYO95jPbdWfY4l_a&authKey=%2FHgwd9lDqiYz0s6QlKdAnDCdYVuEOW5FZPa1%2FqgcoaVwL3vxeT5P7Ysj%2FBE9GTs0&noverify=0&group_code=1046678455)
 
 ---
 
