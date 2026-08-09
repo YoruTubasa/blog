@@ -24,7 +24,7 @@ export const homeConfig: HomeConfig = {
 	nameBadge: "QQ：3092938478",
 
 	// 职业/身份标签
-	occupation: "ACG 爱好者 / 独立博主",
+	occupation: "ACG 爱好者 / 「伪」独立博主",
 
 	// 个人签名（支持多条，会循环打字+删除效果）
 	bio: ["Hello,I'm YoruTubasa."],
