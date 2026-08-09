@@ -49,25 +49,43 @@ home-ticker .home-ticker__track {
 	}
 }
 
-/* ===== 首页数据卡片背景图与排版 ===== */
+/* ===== 首页卡片背景图(不同参数/模糊/铺满) ===== */
+/* 三个卡片: ::before 模糊背景层 */
 .guide-card--latest,
 .guide-card--tags,
-.guide-card--contact,
-.home-data-layer .data-card {
-	background-size: cover !important;
-	background-position: center !important;
+.guide-card--contact {
 	position: relative !important;
+	overflow: hidden !important;
+	background: none !important;
 }
-/* 遮罩层保证文字可读 */
+.guide-card--latest::before,
+.guide-card--tags::before,
+.guide-card--contact::before {
+	content: "";
+	position: absolute;
+	inset: -10px;
+	background-image: var(--card-bg);
+	background-size: cover;
+	background-position: center;
+	filter: blur(8px);
+	transform: scale(1.02);
+	z-index: 0;
+}
+/* 遮罩(保证可读) */
 .guide-card--latest::after,
 .guide-card--tags::after,
 .guide-card--contact::after {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(160deg, rgba(10,10,12,0.72) 20%, rgba(10,10,12,0.45) 100%);
+	background: linear-gradient(160deg, rgba(10,10,12,0.6) 20%, rgba(10,10,12,0.3) 100%);
 	z-index: 0;
 	pointer-events: none;
+}
+:root:not(.dark) .guide-card--latest::after,
+:root:not(.dark) .guide-card--tags::after,
+:root:not(.dark) .guide-card--contact::after {
+	background: linear-gradient(160deg, rgba(255,255,255,0.75) 20%, rgba(255,255,255,0.5) 100%);
 }
 .guide-card--latest > *,
 .guide-card--tags > *,
@@ -75,17 +93,21 @@ home-ticker .home-ticker__track {
 	position: relative;
 	z-index: 1;
 }
-/* 亮色模式遮罩 */
-:root:not(.dark) .guide-card--latest::after,
-:root:not(.dark) .guide-card--tags::after,
-:root:not(.dark) .guide-card--contact::after {
-	background: linear-gradient(160deg, rgba(255,255,255,0.78) 20%, rgba(255,255,255,0.55) 100%);
+
+/* 文章档案卡: 背景图铺满 + 模糊 */
+.data-card__visual {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
 }
-/* 排版: 卡片圆角与间距统一 */
-.guide-card--latest,
-.guide-card--tags,
-.guide-card--contact {
-	border-radius: 1.25rem;
-	overflow: hidden;
-	min-height: 10rem;
+.data-card__visual-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: blur(6px);
+	transform: scale(1.05);
+}
+.data-card__content {
+	position: relative;
+	z-index: 1;
 }
