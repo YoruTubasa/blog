@@ -52,6 +52,24 @@ export const friendsPageConfig: FriendsPageConfig = {
 // 友链配置
 export const friendsConfig: FriendLink[] = [
 	{
+		title: "Astro",
+		imgurl: "https://avatars.githubusercontent.com/withastro?s=200",
+		desc: "现代化静态站点框架，构建更快、体验更好的网站",
+		siteurl: "https://github.com/withastro/astro",
+		tags: ["框架"],
+		weight: 8,
+		enabled: true,
+	},
+	{
+		title: "Firefly 文档",
+		imgurl: "https://avatars.githubusercontent.com/CuteLeaf?s=200",
+		desc: "简洁优雅的 Astro 博客主题文档",
+		siteurl: "https://docs-firefly.cuteleaf.cn/zh/",
+		tags: ["主题"],
+		weight: 7,
+		enabled: true,
+	},
+	{
 		title: "团子和蛋糕",
 		imgurl: "https://blog.tsh520.cn/assets/ziyuan/tx.webp",
 		desc: "如果你喜欢那么欢迎来到我的世界！",
