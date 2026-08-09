@@ -8,7 +8,7 @@ export const announcementConfig: AnnouncementConfig = {
 			title: "公告",
 			content: "本站的文章由AI代笔，如有疏漏请在评论区补充或者联系站长",
 			time: "2026-08-09",
-			sort: 0,
+			sort: 2,
 		},
 		{
 			tag: "欢迎",
