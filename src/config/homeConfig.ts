@@ -6,7 +6,7 @@ export const homeConfig: HomeConfig = {
 	// 1. public 目录（以 "/" 开头，不优化）："/assets/images/avatar.webp"
 	// 2. src 目录（不以 "/" 开头，自动优化但会增加构建时间，推荐）："assets/images/avatar.webp"
 	// 3. 远程 URL："https://example.com/avatar.jpg"
-	avatar: "/assets/images/avatar.webp",
+	avatar: "https://img.yorutubasa.top/i/2026/08/09/6a783c1d0812c.jpg",
 
 	// 上班时间头像（为空则使用上方 avatar）
 	avatarOnWork: "",
