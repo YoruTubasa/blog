@@ -35,7 +35,7 @@ export const footerConfig: FooterConfig = {
 		{
 			label: "主题",
 			name: "Firefly",
-			href: "https://github.com/YoruTubasa/Firefly",
+			href: "https://github.com/CuteLeaf/Firefly",
 		},
 	],
 };
