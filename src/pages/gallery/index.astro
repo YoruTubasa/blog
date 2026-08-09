@@ -290,37 +290,4 @@ const tabs = [
       document.addEventListener("astro:page-load", initFilterIndicator);
     })();
   </script>
-      <!-- 图床相册 -->
-      <div class="mt-8">
-        <div class="flex items-center gap-2 mb-3">
-          <Icon name="material-symbols:photo-library-rounded" class="text-[1.2rem]" />
-          <h3 class="font-bold text-lg">图床相册</h3>
-        </div>
-        <div id="lsky-album" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-          <p class="text-neutral-500 text-sm col-span-full">加载中...</p>
-        </div>
-      </div>
-
-      <script is:inline>
-        (async function () {
-          try {
-            var res = await fetch("/lsky-images.json");
-            var data = await res.json();
-            var box = document.getElementById("lsky-album");
-            if (!box) return;
-            if (!data.images || data.images.length === 0) {
-              box.innerHTML = '<p class="text-neutral-500 text-sm col-span-full">图床暂无图片，去上传几张吧~</p>';
-              return;
-            }
-            box.innerHTML = data.images.map(function (img) {
-              return '<a href="' + img.url + '" target="_blank" rel="noopener" class="relative block overflow-hidden rounded-lg group">' +
-                '<img src="' + img.url + '" alt="' + (img.name || "") + '" loading="lazy" class="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105" />' +
-              '</a>';
-            }).join("");
-          } catch (e) {
-            var box = document.getElementById("lsky-album");
-            if (box) box.innerHTML = '<p class="text-neutral-500 text-sm col-span-full">图床加载失败</p>';
-          }
-        })();
-      </script>
 </MainGridLayout>
