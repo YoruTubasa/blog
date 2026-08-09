@@ -131,6 +131,29 @@ const tabs = [
           <p class="text-neutral-500 text-sm col-span-full">加载中...</p>
         </div>
       </div>
+      <script is:inline>
+        (async function () {
+          try {
+            var res = await fetch("/lsky-images.json");
+            var data = await res.json();
+            var box = document.getElementById("lsky-album");
+            if (!box) return;
+            if (!data.images || data.images.length === 0) {
+              box.innerHTML = '<p class="text-neutral-500 text-sm col-span-full">图床暂无图片，去上传几张吧~</p>';
+              return;
+            }
+            box.innerHTML = data.images.map(function (img) {
+              return '<a href="' + img.url + '" target="_blank" rel="noopener" class="relative block overflow-hidden rounded-lg group">' +
+                '<img src="' + img.url + '" alt="' + (img.name || "") + '" loading="lazy" class="w-full h-36 object-cover transition-transform duration-300 group-hover:scale-105" />' +
+              '</a>';
+            }).join("");
+          } catch (e) {
+            var box = document.getElementById("lsky-album");
+            if (box) box.innerHTML = '<p class="text-neutral-500 text-sm col-span-full">图床加载失败</p>';
+          }
+        })();
+      </script>
+
     </div>
   </div>
 
