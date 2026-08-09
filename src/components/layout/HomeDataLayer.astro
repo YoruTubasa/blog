@@ -73,7 +73,37 @@ const statsShareId = umamiConfig?.shareId ?? "";
 		</div>
 
 		<div class="home-guide-grid">
-			<section class="guide-card guide-card--contact" aria-labelledby="guide-contact-title" data-guide-contact tabindex="0">
+			<section class="guide-card guide-card--article guide-card--latest" aria-labelledby="guide-latest-title" data-guide-rotator data-guide-axis="horizontal">
+				<div class="guide-card__article-heading">
+					<h3 id="guide-latest-title">最新更新</h3>
+				</div>
+				<div class="guide-rotator__slides">
+					{recentPosts.length > 0 ? recentPosts.map((post, index) => (
+						<article class="guide-rotator__slide" data-guide-slide data-guide-url={getPostUrlBySlug(post.id)} hidden={index !== 0} aria-hidden={index !== 0 ? "true" : undefined}>
+							<span class="guide-rotator__meta">{post.data.category || "未分类"} / {formatDateI18n(post.data.published)}</span>
+							<div class="guide-rotator__title-row">
+								<a class="guide-rotator__article-link" href={getPostUrlBySlug(post.id)}><strong>{post.data.title}</strong></a>
+								<a class="guide-card__article-action" href={getPostUrlBySlug(post.id)} aria-label={`打开文章：${post.data.title}`} title="打开当前文章"><Icon name="material-symbols:arrow-forward-rounded" is:inline /></a>
+							</div>
+						</article>
+					)) : <p class="guide-card__detail">暂无文章内容</p>}
+				</div>
+				{recentPosts.length > 0 && (
+					<div class="guide-rotator__dots" aria-label="切换最新文章">
+						{recentPosts.map((post, index) => <button type="button" data-guide-dot aria-label={`查看最新文章：${post.data.title}`} aria-current={index === 0 ? "true" : undefined}></button>)}
+					</div>
+				)}
+			</section>
+
+<section class="guide-card guide-card--index guide-card--tags" aria-labelledby="guide-tags-title">
+				<p class="guide-card__eyebrow">TAGS</p>
+				<h3 id="guide-tags-title">标签索引</h3>
+				<div class="guide-tag-list">
+					{tags.slice(0, 5).map((tag) => <a href={getTagUrl(tag.name)}>#{tag.name}<span>{tag.count}</span></a>)}
+					<a class="guide-tag-list__all" href={url("/archive/")}>浏览全部标签 <Icon name="material-symbols:arrow-outward-rounded" is:inline /></a>
+				</div>
+			</section>
+		<section class="guide-card guide-card--contact" aria-labelledby="guide-contact-title" data-guide-contact tabindex="0">
 				<div class="guide-card__visual" aria-hidden="true">
 					<img src={homeConfig.dataLayer.contactImage} alt="" loading="lazy" decoding="async" />
 				</div>
