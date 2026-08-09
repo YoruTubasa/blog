@@ -36,6 +36,11 @@ const tabs = [
 		name: i18n(I18nKey.galleryNetworkAlbum),
 		icon: "material-symbols:wallpaper",
 	},
+	{
+		id: "lsky",
+		name: "图床相册",
+		icon: "material-symbols:photo-library-rounded",
+	},
 ];
 ---
 
@@ -119,6 +124,12 @@ const tabs = [
 
       <div data-gallery-section="network" class="hidden">
         <NetworkAlbum client:visible />
+      </div>
+
+      <div data-gallery-section="lsky" class="hidden">
+        <div id="lsky-album" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <p class="text-neutral-500 text-sm col-span-full">加载中...</p>
+        </div>
       </div>
     </div>
   </div>
