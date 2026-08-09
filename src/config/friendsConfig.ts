@@ -52,6 +52,15 @@ export const friendsPageConfig: FriendsPageConfig = {
 // 友链配置
 export const friendsConfig: FriendLink[] = [
 	{
+		title: "团子和蛋糕",
+		imgurl: "https://blog.tsh520.cn/assets/ziyuan/tx.webp",
+		desc: "如果你喜欢那么欢迎来到我的世界！",
+		siteurl: "https://blog.tsh520.cn",
+		tags: ["Blog"],
+		weight: 9,
+		enabled: true,
+	},
+	{
 		title: "夜翼玖",
 		imgurl: "https://q1.qlogo.cn/g?b=qq&nk=3092938478&s=640",
 		desc: "Hello,I'm YoruTubasa.",
