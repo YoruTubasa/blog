@@ -43,11 +43,31 @@ AstrBot(机器人框架层)
 智能对话、群管、订阅推送……
 ```
 
-通过 LLBot 的**反向 WebSocket** 或**正向 WS**,AstrBot 可以轻松对接,实现群聊 AI 助手、自动回复、资讯推送等玩法。
+## 四、部署方法(多种可选)
 
-## 四、部署实战
+### 方式一:Desktop 桌面版(推荐 Windows 用户)
 
-### Docker 方式(推荐,服务器环境)
+1. 从 LLBot 官网(或 GitHub Releases)下载 **Desktop 版安装包**;
+2. 双击安装,启动后自动打开现代化 **WebUI 管理界面**;
+3. 在 WebUI 中扫码登录 QQ,配置 OneBot 11 服务即可使用。
+
+> 所有配置都在可视化界面完成,完全无需手动编辑配置文件,适合新手。
+
+### 方式二:CLI 命令行版(推荐服务器)
+
+```bash
+# 下载对应平台(Windows/Linux)的 CLI 版本
+wget https://example.com/llbot-cli-linux-x64.tar.gz
+tar -xzf llbot-cli-linux-x64.tar.gz
+cd llbot-cli
+
+# 启动服务
+./llbot start
+```
+
+启动后访问 `http://localhost:3001` 打开 WebUI 完成扫码登录与协议配置。
+
+### 方式三:Docker 部署(推荐容器化环境)
 
 ```bash
 # 拉取并启动 LLBot 容器
@@ -58,17 +78,7 @@ docker run -d --name llbot \
   llbot/llbot:latest
 ```
 
-### CLI 方式
-
-```bash
-# 下载对应平台的 CLI 版本
-./llbot start
-
-# 打开浏览器访问 WebUI 进行配置
-# 默认管理地址: http://localhost:3001
-```
-
-启动后在 **WebUI 中扫码登录 QQ**,配置 OneBot 11 的正向/反向 WebSocket 即可与机器人框架对接。
+数据持久化在宿主机,容器更新/迁移都不丢配置。
 
 > 提示:正式使用建议开启**反向 WebSocket**,由框架主动连接,更安全稳定。
 

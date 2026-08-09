@@ -46,23 +46,45 @@ OlivOS 把机器人能力拆成清晰的层次:
 
 上层插件无需关心"消息来自哪个平台",下层适配层屏蔽了各平台的 API 差异。这意味着你写一个"每日天气"插件,就能同时在 QQ 群和 Telegram 群工作。
 
-## 四、部署使用
+## 四、部署方法(多种可选)
 
-OlivOS 基于 Python,部署非常轻量:
+### 方式一:Windows 发布版本(推荐,最省心)
+
+1. 前往 OlivOS 的 **GitHub Releases** 页面,下载最新的 **Windows 发布版**(exe 安装包或压缩包);
+2. 解压/安装后**双击运行**,程序会自动完成 Python 运行环境与依赖的初始化;
+3. 打开自带的图形界面,按引导添加各平台接入(如 OneBot 协议对接 QQ);
+4. 保存配置后即可启动机器人。
+
+> 推荐理由:发布版已经内置了运行环境,无需手动安装 Python 和依赖,开箱即用,对新手最友好。
+
+### 方式二:源码运行(Python 环境)
 
 ```bash
 # 1. 克隆项目
 git clone https://github.com/OlivOS-Team/OlivOS.git
 cd OlivOS
 
-# 2. 安装依赖
+# 2. 安装依赖(建议使用虚拟环境)
+python -m venv venv
+venv\Scripts\activate        # Windows
+# source venv/bin/activate    # Linux / macOS
+
 pip install -r requirements.txt
 
 # 3. 启动
 python main.py
 ```
 
-启动后按引导配置各平台接入(如 OneBot 协议对接 QQ),即可开始使用。
+### 方式三:Docker 部署(适合服务器)
+
+```bash
+docker run -d --name olivos \
+  -v /opt/olivos:/app/data \
+  --restart always \
+  olivos/olivos:latest
+```
+
+数据目录挂载到宿主机,方便备份与迁移。
 
 > 提示:配合 NapCat / LLBot 等 OneBot 协议实现,可以快速接入 QQ;Telegram / Discord 则直接配置 Bot Token 即可。
 
