@@ -52,7 +52,7 @@ export const siteConfig: SiteConfig = {
 			type: "image/jpeg",
 			sizes: "any",
 		},
-	]
+	],
 
 	// 导航栏配置
 	navbar: {
