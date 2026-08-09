@@ -48,3 +48,44 @@ home-ticker .home-ticker__track {
 		background-image: var(--bg-mobile);
 	}
 }
+
+/* ===== 首页数据卡片背景图与排版 ===== */
+.guide-card--latest,
+.guide-card--tags,
+.guide-card--contact,
+.home-data-layer .data-card {
+	background-size: cover !important;
+	background-position: center !important;
+	position: relative !important;
+}
+/* 遮罩层保证文字可读 */
+.guide-card--latest::after,
+.guide-card--tags::after,
+.guide-card--contact::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(160deg, rgba(10,10,12,0.72) 20%, rgba(10,10,12,0.45) 100%);
+	z-index: 0;
+	pointer-events: none;
+}
+.guide-card--latest > *,
+.guide-card--tags > *,
+.guide-card--contact > * {
+	position: relative;
+	z-index: 1;
+}
+/* 亮色模式遮罩 */
+:root:not(.dark) .guide-card--latest::after,
+:root:not(.dark) .guide-card--tags::after,
+:root:not(.dark) .guide-card--contact::after {
+	background: linear-gradient(160deg, rgba(255,255,255,0.78) 20%, rgba(255,255,255,0.55) 100%);
+}
+/* 排版: 卡片圆角与间距统一 */
+.guide-card--latest,
+.guide-card--tags,
+.guide-card--contact {
+	border-radius: 1.25rem;
+	overflow: hidden;
+	min-height: 10rem;
+}

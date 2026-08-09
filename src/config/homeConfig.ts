@@ -90,8 +90,8 @@ export const homeConfig: HomeConfig = {
 
 	dataLayer: {
 		visitImage: "/assets/images/home/home-data-1.webp",
-		archiveImage: "/assets/images/home/home-data-2.webp",
-		contactImage: "/assets/images/home/home-data-3.webp",
+		archiveImage: "https://t.alcy.cc/pc",
+		contactImage: "https://t.alcy.cc/pc",
 		skillsImage: "/assets/images/home/home-data-4.webp",
 	},
 
