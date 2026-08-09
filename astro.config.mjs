@@ -95,7 +95,7 @@ export default defineConfig({
 			],
 			smoothScrolling: false,
 			cache: true,
-			preload: { hover: true, visible: true },
+			preload: false, // 关闭预取,减少移动端请求数
 			loadOnIdle: false,
 			accessibility: true,
 			updateHead: true,
