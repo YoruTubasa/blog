@@ -12,6 +12,10 @@ const config = {
 	dark: "html.dark",
 	wordLimit: ["2", "300"],
 	...(commentConfig.waline?.visitorCount ? { pageview: true } : {}),
+	// 夜翼玖专属博主标签
+	locale: {
+		admin: "夜翼玖专属",
+	},
 };
 ---
 <!-- Waline -->
