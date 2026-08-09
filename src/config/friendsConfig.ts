@@ -70,6 +70,15 @@ export const friendsConfig: FriendLink[] = [
 		enabled: true,
 	},
 	{
+		title: "MmzMing",
+		imgurl: "https://tblog.mmzhiku.xyz/favicon/MyLogo.ico",
+		desc: "MmzMing的博客",
+		siteurl: "https://tblog.mmzhiku.xyz",
+		tags: ["Blog"],
+		weight: 6,
+		enabled: true,
+	},
+	{
 		title: "团子和蛋糕",
 		imgurl: "https://blog.tsh520.cn/assets/ziyuan/tx.webp",
 		desc: "如果你喜欢那么欢迎来到我的世界！",
