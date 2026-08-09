@@ -50,3 +50,11 @@ home-ticker .home-ticker__track {
 }
 
 
+
+/* 最近更新卡片: NEW 眉标与标题布局对齐其他卡片 */
+.guide-card--latest .guide-card__article-heading {
+	display: block;
+}
+.guide-card--latest .guide-card__article-heading h3 {
+	margin-top: 0.45rem;
+}
